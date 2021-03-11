@@ -7,6 +7,7 @@ import { CardComponent } from './CardComponent';
 const Hello = () => {
   const [latestCommit, setLatestCommit] = useState(null);
   const [deployedCommit, setDeployedCommit] = useState(null);
+  const [pullRequests, setPullRequests] = useState(null);
 
   const getLatestCommit = async () => {
     const req = await fetch(
@@ -24,12 +25,21 @@ const Hello = () => {
       .catch((err) => console.log('err', err));
   };
 
+  const getPullRequests = () => {
+    fetch('https://api.github.com/repos/onkarg/side-kick/pulls?state=all')
+      .then((res) => res.json())
+      .then((data) => setPullRequests(data))
+      .catch((err) => console.log('err', err));
+  };
+
   useEffect(() => {
     getLatestCommit();
     getDeployedCommit();
+    getPullRequests();
   }, []);
 
   console.log('latestCOmmit', latestCommit);
+  console.log('pullrueqest', pullRequests);
   console.log('deployed', deployedCommit);
   return (
     <div className="main">
