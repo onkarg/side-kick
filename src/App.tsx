@@ -3,6 +3,7 @@ import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import './App.global.css';
 import { CardComponent } from './CardComponent';
+import CardListComponent from './CardListComponent';
 
 const Hello = () => {
   const [latestCommit, setLatestCommit] = useState(null);
@@ -49,7 +50,7 @@ const Hello = () => {
           <CardComponent />
         </div>
         <div className="list">
-          <div>list will go here</div>
+          <CardListComponent pullRequests={pullRequests} />
         </div>
       </div>
     </div>

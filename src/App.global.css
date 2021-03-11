@@ -85,8 +85,33 @@ a:hover {
   height: 50%; */
 }
 
-.card-box {
+.card-list {
+  display: flex;
+  flex-flow: column;
+  padding: 16px;
+  border-radius: 8px;
+  background-color: black;
+  color: white;
 }
+.card-list:not(:last-child) {
+  margin-bottom: 8px;
+}
+
+.list-title-text {
+  display: flex;
+  flex-flow: column;
+  color: white;
+}
+
+.sub-text {
+  display: flex;
+  flex-flow: row;
+}
+.text {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
 .title-text {
   display: flex;
   flex-flow: row;
