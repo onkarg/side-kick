@@ -8,9 +8,9 @@ body {
   height: 100vh;
   background: linear-gradient(
     200.96deg,
-    #fedc2a -29.09%,
-    #dd5789 51.77%,
-    #7a2c9e 129.35%
+    #000000 -29.09%,
+    #333333 51.77%,
+    #666666 129.35%
   );
   font-family: sans-serif;
   overflow-y: hidden;
@@ -55,4 +55,27 @@ a:hover {
   justify-content: center;
   align-items: center;
   margin: 20px 0;
+}
+
+.card-wrapper {
+  display: flex;
+  flex-flow: column;
+  padding: 16px;
+  border-radius: 8px;
+  background-color: black;
+  color: white;
+  width: 100%;
+  height: 50%;
+}
+
+.card-box {
+}
+.title-text {
+  display: flex;
+  flex-flow: row;
+  align-items: center;
+  justify-content: space-between;
+}
+.card-box:not(:first-child) {
+  margin-top: 8px;
 }
