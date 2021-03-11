@@ -5,17 +5,31 @@ import './App.global.css';
 
 const Hello = () => {
   const [latestCommit, setLatestCommit] = useState(null);
+  const [deployedCommit, setDeployedCommit] = useState(null);
 
-  const getLatestCommit = () => {
-    fetch('http://localhost:3001/')
+  const getLatestCommit = async () => {
+    const req = await fetch(
+      'https://api.github.com/repos/onkarg/side-kick/commits'
+    );
+    const reqJson = await req.json();
+    const sha = reqJson[0].sha.slice(0, 9);
+    setLatestCommit(sha);
+  };
+
+  const getDeployedCommit = () => {
+    fetch('https://mydashboard.nauto.com/version')
       .then((res) => res.json())
-      .then((data) => console.log('data', data))
+      .then((data) => setDeployedCommit(data.version))
       .catch((err) => console.log('err', err));
   };
 
   useEffect(() => {
     getLatestCommit();
+    getDeployedCommit();
   }, []);
+
+  console.log('latestCOmmit', latestCommit);
+  console.log('deployed', deployedCommit);
   return (
     <div>
       <div className="Hello">
