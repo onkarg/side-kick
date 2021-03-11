@@ -18,14 +18,13 @@ export const CardListComponent: React.FC<Props> = (props) => {
               <h2 className="pr-title">{pr.title}</h2>
             </a>
             <div className="sub-text">
-              <div
-                className="text"
-                style={{ marginRight: '5px' }}
-              >{`PR# : ${pr.number}`}</div>
+              <div className="text">{`PR# : ${pr.number}`}</div>
+              <span style={{ marginRight: '5px', marginLeft: '5px' }}>|</span>
               <div
                 className="text"
                 style={{ marginRight: '5px' }}
               >{`opened at ${new Date(pr.created_at).toDateString()}`}</div>
+              <span style={{ marginRight: '5px', marginLeft: '5px' }}>|</span>
               <div className="text">{`by ${pr.user.login}`}</div>
             </div>
           </div>
