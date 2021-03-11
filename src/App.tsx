@@ -29,8 +29,6 @@ const Hello = () => {
     getDeployedCommit();
   }, []);
 
-  console.log('latestCOmmit', latestCommit);
-  console.log('deployed', deployedCommit);
   return (
     <div className="main">
       <div className="heading">Deploy Easy</div>
