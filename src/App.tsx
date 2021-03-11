@@ -32,9 +32,15 @@ const Hello = () => {
   console.log('latestCOmmit', latestCommit);
   console.log('deployed', deployedCommit);
   return (
-    <div className="card-page">
-      <div className="card-wrapper">
-        <CardComponent />
+    <div className="main">
+      <div className="heading">Deploy Easy</div>
+      <div className="content">
+        <div className="card-wrapper">
+          <CardComponent />
+        </div>
+        <div className="list">
+          <div>list will go here</div>
+        </div>
       </div>
     </div>
   );
