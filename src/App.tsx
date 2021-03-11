@@ -39,15 +39,12 @@ const Hello = () => {
     getPullRequests();
   }, []);
 
-  console.log('latestCOmmit', latestCommit);
-  console.log('pullrueqest', pullRequests);
-  console.log('deployed', deployedCommit);
   return (
     <div className="main">
       <div className="heading">Deploy Easy</div>
       <div className="content">
         <div className="card-wrapper">
-          <CardComponent />
+          <CardComponent current={latestCommit} deployed={deployedCommit} />
         </div>
         <div className="list">
           <CardListComponent pullRequests={pullRequests} />
