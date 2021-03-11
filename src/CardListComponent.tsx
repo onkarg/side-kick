@@ -15,14 +15,18 @@ export const CardListComponent: React.FC<Props> = (props) => {
         <div className="card-list" key={index}>
           <div className="list-title-text">
             <a href={pr.url} target="_blank" rel="noreferrer">
-              <h3>{pr.title}</h3>
+              <h2 className="pr-title">{pr.title}</h2>
             </a>
             <div className="sub-text">
-              <h4 className="text">{`PR# : ${pr.number}`}</h4>
-              <h4 className="text">{`opened at ${new Date(
-                pr.created_at
-              ).toDateString()}`}</h4>
-              <h4 className="text">{`by ${pr.user.login}`}</h4>
+              <div
+                className="text"
+                style={{ marginRight: '5px' }}
+              >{`PR# : ${pr.number}`}</div>
+              <div
+                className="text"
+                style={{ marginRight: '5px' }}
+              >{`opened at ${new Date(pr.created_at).toDateString()}`}</div>
+              <div className="text">{`by ${pr.user.login}`}</div>
             </div>
           </div>
         </div>
