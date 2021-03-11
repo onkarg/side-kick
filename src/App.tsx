@@ -39,7 +39,7 @@ const Hello = () => {
           <CardComponent />
         </div>
         <div className="list">
-          <div>list will go here</div>
+          <div>list will go</div>
         </div>
       </div>
     </div>
